@@ -8,7 +8,7 @@ export default {
     data() {
         return {
             projects: [],
-
+            pages: [],
         };
     },
 
@@ -24,8 +24,9 @@ export default {
                 console.log(this.projects);
                 // const data = response;
 
+                this.pages = response.data.result.links
                 // this.projects = data.data.result;
-                // console.log(data);
+                console.log(this.pages);
             }).catch(error => {
                 console.log(error);
             })
@@ -35,8 +36,38 @@ export default {
 
 <template>
     <div class="container">
-        <ProjectCard v-for="(project, idx)  in projects" :details="project" :key="idx" />
+        <ProjectCard class="card" v-for="(project, idx)  in projects" :details="project" :key="idx" />
+    </div>
+    <div>
+        <ul class="pageList">
+            <li v-for="page in pages">
+                <a :href="page.url"> {{ page.label }}</a>
+            </li>
+        </ul>
+
     </div>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+.container {
+    margin: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+
+    .card {
+        padding: 10px;
+        border: 1px gray solid;
+        border-radius: 15px;
+    }
+}
+
+.pageList {
+    list-style: none;
+    display: flex;
+
+    li {
+        margin: 0 20px;
+    }
+}
+</style>
