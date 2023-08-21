@@ -1,20 +1,23 @@
 <script >
-import HelloWorld from './components/HelloWorld.vue'
+import ProjectCard from './components/ProjectCard.vue'
 import axios from 'axios'
 export default {
     components: {
-        HelloWorld
+        ProjectCard
     },
-    data: function () {
+    data() {
         return {
             projects: [],
 
-        }
+        };
     },
+
 
     mounted() {
 
-        axios.get("http://127.0.0.1:8000/api/project-api")
+
+
+        axios.get('http://127.0.0.1:8000/api/project-api')
             .then(response => {
 
                 this.projects = response.data.result.data;
@@ -31,19 +34,9 @@ export default {
 </script>
 
 <template>
-    <div v-for="project in projects">
-
-        {{ project.id }} --
-        {{ project.name }}
-
-        <ul>
-            <li v-for="technology in project.technologies">
-                {{ technology.name }}
-            </li>
-        </ul>
-
+    <div class="container">
+        <ProjectCard v-for="(project, idx)  in projects" :details="project" :key="idx" />
     </div>
-    <HelloWorld />
 </template>
 
 <style scoped></style>
