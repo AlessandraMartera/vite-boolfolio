@@ -12,24 +12,34 @@ export default {
         };
     },
 
+    methods: {
 
+        loadPage(target) {
+
+            if (target == null) return;
+
+            this.loadProjects(target);
+        },
+        loadProjects(i) {
+            axios.get(i)
+                .then(response => {
+
+                    this.projects = response.data.result.data;
+                    console.log(this.projects);
+                    // const data = response;
+
+                    this.pages = response.data.result.links
+                    // this.projects = data.data.result;
+                    console.log(this.pages);
+                }).catch(error => {
+                    console.log(error);
+                })
+
+        }
+
+    },
     mounted() {
-
-
-
-        axios.get('http://127.0.0.1:8000/api/project-api')
-            .then(response => {
-
-                this.projects = response.data.result.data;
-                console.log(this.projects);
-                // const data = response;
-
-                this.pages = response.data.result.links
-                // this.projects = data.data.result;
-                console.log(this.pages);
-            }).catch(error => {
-                console.log(error);
-            })
+        this.loadProjects('http://127.0.0.1:8000/api/project-api');
     }
 }
 </script>
@@ -41,7 +51,8 @@ export default {
     <div>
         <ul class="pageList">
             <li v-for="page in pages">
-                <a :href="page.url"> {{ page.label }}</a>
+
+                <div v-html="page.label" role="button" @click="loadPage(page.url)"></div>
             </li>
         </ul>
 
@@ -63,11 +74,14 @@ export default {
 }
 
 .pageList {
+    width: fit-content;
+    margin: 5px auto;
     list-style: none;
     display: flex;
 
     li {
         margin: 0 20px;
+        cursor: pointer;
     }
 }
 </style>

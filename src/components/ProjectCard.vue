@@ -19,7 +19,7 @@ export default {
 </script>
 
 <template>
-    <div class="card">
+    <div>
 
         {{ details.id }} --
         {{ details.name }}
