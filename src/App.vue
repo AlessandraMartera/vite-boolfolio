@@ -52,7 +52,9 @@ export default {
         <ul class="pageList">
             <li v-for="page in pages">
 
-                <div v-html="page.label" role="button" @click="loadPage(page.url)"></div>
+                <div :class="(page.url === null) ? 'hidden' : ''" v-html="page.label" role="button"
+                    @click="loadPage(page.url)">
+                </div>
             </li>
         </ul>
 
@@ -82,6 +84,10 @@ export default {
     li {
         margin: 0 20px;
         cursor: pointer;
+    }
+
+    .hidden {
+        display: none;
     }
 }
 </style>
