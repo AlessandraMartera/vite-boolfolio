@@ -1,7 +1,22 @@
-# Vue 3 + Vite
+#### Todo
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### Milestone 1
+Iniziamo ad occuparci della parte front-end della nostra applicazione: creiamo un nuovo progetto `Vue 3 + Vite` e installiamo `axios`. 
+Colleghiamo questo progetto ad una repo separata.
 
-## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Nel componente principale della nostra `Vue App` facciamo una chiamata API all’endpoint costruito nel progetto Laravel ([[2023-08-21 - Laravel Boolfolio - API#Milestone 1|Milestone 1]]) e recuperiamo tutti i progetti dal nostro `back-end`.
+Stampiamo in console i risultati e verifichiamo di ricevere i dati correttamente.
+
+
+Creiamo un nuovo componente `ProjectCard`, che corrisponde ad una card per visualizzare un progetto. Utilizziamo questo componente per visualizzare tutti i progetti ricevuti tramite API.
+
+### Bonus
+Gestire la paginazione dei risultati
+
+### Milestone 2
+Aggiungere la dipendenza `vue-route@4` al progetto `VueJS`. Creare almeno 2 pagine diverse:
+- **home**: dove listare tutti i progetti (eventualmente con le relative pagine)
+- **dettagli progetto**: dove sara' possibile leggere tutte le informazioni riguardanti il progetto
+
+Creare inoltre un `header` che sia condiviso da tutte le pagine.
