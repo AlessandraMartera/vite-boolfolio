@@ -11,6 +11,9 @@ export default {
         <h1>
             Hi i'm an Header
         </h1>
+        <h4>
+            by Ale
+        </h4>
     </header>
 </template>
 

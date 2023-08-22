@@ -15,7 +15,9 @@ export default {
 <template>
     <div>
 
-        <router-link :to="{ name: 'about', params: { id: details.id } }">more details</router-link>
+        <router-link :to="{ name: 'about', params: { id: details.id } }">
+            more details
+        </router-link>
 
         {{ details.id }} --
         {{ details.name }}

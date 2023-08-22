@@ -26,12 +26,12 @@ export default {
                 .then(response => {
 
                     this.projects = response.data.result.data;
-                    console.log(this.projects);
+                    // console.log(this.projects);
                     // const data = response;
 
                     this.pages = response.data.result.links
                     // this.projects = data.data.result;
-                    console.log(this.pages);
+                    // console.log(this.pages);
                 }).catch(error => {
                     console.log(error);
                 })
