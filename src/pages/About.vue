@@ -6,8 +6,10 @@ export default {
 </script>
 
 <template>
-    <h1>
-        About
-    </h1>
-    <router-link to="/">return to Home</router-link>
+    <div>
+        <h1>
+            About
+        </h1>
+        <router-link :to="{ name: 'home' }">return to Home</router-link>
+    </div>
 </template>
