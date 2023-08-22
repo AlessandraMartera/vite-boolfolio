@@ -1,7 +1,8 @@
 <script >
-import ProjectCard from './components/ProjectCard.vue'
+import ProjectCard from '../components/ProjectCard.vue'
 import axios from 'axios'
 export default {
+    name: 'AppHome',
     components: {
         ProjectCard
     },

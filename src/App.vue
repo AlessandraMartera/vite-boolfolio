@@ -1,13 +1,15 @@
-<script>
-import AppHeader from './components/AppHeader.vue'
+<script >
+import HeaderCompo from './components/HeaderCompo.vue'
 
 export default {
     components: {
-        AppHeader
+        HeaderCompo
     },
 }
 </script>
 
 <template>
-    <AppHeader />
+    <!-- <HeaderCompo /> -->
+
+    <router-view></router-view>
 </template>

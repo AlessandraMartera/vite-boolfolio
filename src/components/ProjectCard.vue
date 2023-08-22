@@ -1,16 +1,10 @@
 <script>
 
 export default {
-    name: 'detailsCard',
+    name: 'PorjectCard',
     props: {
         details: Object
     },
-    // data() {
-    //     return {
-    //         projects: [],
-
-    //     };
-    // },
 
 }
 

@@ -2,7 +2,7 @@
 
 
 export default {
-    name: 'AppHeader',
+    name: 'HeaderCompo',
 }
 </script>
 
