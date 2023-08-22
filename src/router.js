@@ -12,7 +12,7 @@ name: 'home',
 component: AppHome
 },
 {
-path: '/about',
+path: '/about/:id',
 name: 'about',
 component: About
 },

@@ -1,8 +1,14 @@
 
 <script>
 export default {
-    name: "About"
+    name: "About",
+    mounted() {
+        axios.get(`http://127.0.0.1:8000/api/show-api/${this.$route.params}`).then((response) => {
+        })
+
+    }
 }
+
 </script>
 
 <template>
