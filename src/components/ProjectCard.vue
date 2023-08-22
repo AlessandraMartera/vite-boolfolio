@@ -15,11 +15,15 @@ export default {
 <template>
     <div>
 
+        <router-link to="/about">more details </router-link>
+
         {{ details.id }} --
         {{ details.name }}
 
+
+
         <ul>
-            <li v-for="technology in details.technologies">
+            <li v-for=" technology in details.technologies">
                 {{ technology.name }}
             </li>
         </ul>

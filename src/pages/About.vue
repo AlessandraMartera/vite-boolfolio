@@ -6,5 +6,8 @@ export default {
 </script>
 
 <template>
-    About
+    <h1>
+        About
+    </h1>
+    <router-link to="/">return to Home</router-link>
 </template>
