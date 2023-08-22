@@ -46,10 +46,10 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <div class="m-5 d-flex justify-content-between p-5">
         <ProjectCard class="card" v-for="(project, idx)  in projects" :details="project" :key="idx" />
     </div>
-    <div>
+    <div class="my-5">
         <ul class="pageList">
             <li v-for="page in pages">
 

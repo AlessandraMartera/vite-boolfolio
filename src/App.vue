@@ -9,7 +9,9 @@ export default {
 </script>
 
 <template>
-    <!-- <HeaderCompo /> -->
+    <div class="container-fluid align-center">
+        <HeaderCompo />
 
-    <router-view></router-view>
+        <router-view></router-view>
+    </div>
 </template>
