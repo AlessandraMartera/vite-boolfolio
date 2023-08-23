@@ -6,6 +6,8 @@ export default {
     data() {
         return {
             projects: {},
+            // technologies: {},
+            typeProje: '',
         }
     },
     mounted() {
@@ -13,8 +15,11 @@ export default {
             .then((response) => {
 
                 this.projects = response.data.result;
-                console.log(this.projects);
+                // console.log(this.projects);
 
+                // console.log(response.data.result.type.language);
+                this.typeProje = response.data.result.type.language;
+                // console.log(this.typeProje);
             })
 
 
@@ -42,6 +47,13 @@ export default {
         </div>
 
         <hr>
+        <h5>
+            Project Type:
+            {{ typeProje }}
+            <!-- {{ projects.type.language }} -->
+        </h5>
+
+
         <h3>description:</h3>
         <p>{{ projects.decription }}</p>
         <hr>
